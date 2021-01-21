@@ -1,0 +1,8 @@
+.ftpconfig
+.ftpignore
+.env
+mykey.pem
+mykey.pub
+show_ext/api/composer.json
+show_ext/api/composer.lock
+show_ext/vendor/

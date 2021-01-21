@@ -1,0 +1,10 @@
+	RewriteEngine On    # Turn on the rewriting engine
+# RewriteRule ^api/([a-zA-Z0-9_-]*)$ api.php?doc=$1 [NC,L]
+	RewriteRule ^protected/([a-zA-Z0-9_-]*)$ protected.php?doc=$1 [NC,L]
+	RewriteRule ^login login.php [NC,L]
+	RewriteRule ^register register.php [NC,L]
+	RewriteRule ^board/home/([0-9_-]*)$ board.php?home=$1&guest= [NC,L]
+	RewriteRule ^board/guest/([0-9_-]*)$ board.php?home=&guest=$1 [NC,L]
+
+	RewriteCond %{HTTP:Authorization} ^(.*)
+	RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
